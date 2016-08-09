@@ -27,8 +27,8 @@ def tab_sections(lines):
     Group lines of text into "paragraphs"... ie: sections separated by an empty
     line
     """
-    yield from map(list, map(op.itemgetter(1),
-                             it.groupby(lines, bool)))
+    for key, group in it.groupby(lines):
+        yield list(group)
 
 
 def group_viewport(groups, height):
