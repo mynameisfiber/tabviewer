@@ -27,7 +27,7 @@ def tab_sections(lines):
     Group lines of text into "paragraphs"... ie: sections separated by an empty
     line
     """
-    for key, group in it.groupby(lines):
+    for key, group in it.groupby(lines, bool):
         yield list(group)
 
 
